@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> -->
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+        <style>
+            *{
+                margin: 0;
+                padding:0;
+                box-sizing: border-box;
+                font-family: "gilroy";
+            
+            }
+            html,body{
+                width: 100%;
+                height: 100%;
+            }
+            
+            #main{
+                width: 100%;
+                height: 100vh;
+                /* background: black; */
+            }
+            
+            #back{
+                width: 100%;
+                height: 100vh;
+                /* background-color: black; */
+            }
+            #back img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            #top{
+                pointer-events: none;
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                /* background-color:#fff; */
+            }
+            #workingarea{
+                position: relative;
+                margin: 0 auto;
+                width: 80%;
+                height: 100vh;
+                max-width: 1920px;
+                /* background-color: aqua; */
+                
+            }
+            #nav{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 40px 0;
+            
+            }
+            #nav img{
+                height: 50px;
+            }
+            #navleft,#navright{
+                display: flex;
+                align-items: center;
+                gap: 50px;
+            }
+            #nav a{
+                pointer-events: all;
+                text-decoration: none;
+                text-transform:uppercase ;
+                font-size: 13px;
+                font-weight: 700;
+                color:#fff;
+                /* font-family: "gilroy"; */
+            
+            }
+            #hero{
+                position: absolute;
+                justify-content: space-between;
+                top: 50%;
+                left: 0;
+                display: flex;
+                transform: translate(0%,-50%);
+                width: 100%;
+                margin-top: 10vh;
+                /* height: 100px; */
+                /* background-color: red; */
+            }
+            #heroleft{
+               min-width: 100%;
+               /* height: 100px; */
+               /* background-color: yellow; */
+            }
+            
+            #heroleft .elem{
+                position: relative;
+                /* margin-top: 5px; */
+                height: 9vw;
+                overflow: hidden;
+                /* background-color: red; */
+            }
+            #heroleft .elem h1:nth-child(1){
+                top: 0;
+            }
+            #heroleft .elem h1{
+                position:absolute;
+                top: 100%;
+                left: 0;
+                line-height: 0.9;
+                font-family: "kajiro";
+                color: #fff;
+                font-weight: 100;
+                font-size: 10vw;
+            
+            }
+            #heroright{
+                display: flex;
+                width: 20%;
+                color: #fff;
+                /* height: 100px; */
+                /* background-color:black; */
+                flex-direction: column;
+                align-items:flex-end ;
+            
+             }
+             #heroright p{
+                text-align: right;
+                font-size: 14px;
+                font-weight: 300;
+                /* margin-bottom: 25px; */
+             }
+             #heroleft button{
+                padding: .8vw 3vw;
+                font-size: 3vw;
+                margin-top:2vw ;
+                font-family: "kajiro";
+                pointer-events: all;
+                
+             }
+            
+        </style>
+</head>
+<body>
+    <div id="main">
+        <div id="back">
+            <img class="hello" src="https://media.istockphoto.com/id/1359179449/photo/young-man-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Q_KKjWeD51dTIVj3yD8UvESEmMIpimX8zRStPeJui_0="alt="">
+            <img src="https://images.unsplash.com/photo-1588534331434-ee1760bd32d8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="">
+            <img src="https://images.unsplash.com/photo-1549732565-d673b928da7f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="">
+            <img src="https://images.unsplash.com/photo-1549732565-d673b928da7f?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="">
+            <img src="https://images.unsplash.com/photo-1588534331434-ee1760bd32d8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.unsplash.com/photo-1588534331434-ee1760bd32d8?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"alt="">
+        </div>
+        <div id="top">
+            <div id="workingarea">
+                
+                <div id="hero">
+                    <div id="heroleft">
+                        <div class="elem">
+                            <h1>Revolutionizing Property </h1>
+                            <h1>Secure, Transparent,</h1>
+                            <h1> Track Property </h1>
+                            <h1>Next-Gen Property </h1>
+                            <h1>Blockchain-Powered</h1>
+                        </div>
+                        <div class="elem">
+                            <h1>Property</h1>
+                            <h1>  Verified Ownership </h1>
+                            <h1> Trust Blockchain</h1>
+                            <h1> Management </h1>
+                            <h1>Ownership, </h1>
+                        </div>
+                        <div class="elem">
+                            <h1> with Blockchain </h1>
+                            <h1>Records</h1>
+                            <h1></h1>
+                            <h1>solutions</h1>
+                            <h1> Anytime, Anywhere</h1>
+                        </div>
+                        <form action="/">
+
+                            <button  >  Get started</button>
+                        </form>
+                    </div>
+                    <!-- <div id="heroright">
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <div id="imagediv"></div>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam natus magni repellendus esse, hic perspiciatis optio placeat iste! A explicabo aspernatur laborum earum perspiciatis minima.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut recusandae quo, blanditiis officia dolore, animi aliquam ab sapiente minus nihil tenetur consequatur. Asperiores.</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!--  Gsap is needed for Basic Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Scroll Trigger is needed for Scroll Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Three.js is needed for 3d Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+<!-- ControlKit is needed for Debug Panel -->
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+<script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+<!-- <script src="script.js"></script> -->
+ <script>
+    Shery.imageEffect("#back", {
+        style: 5/*OR 5 for different variant */,
+       config:{"a":{"value":2,"range":[0,30]},"b":{"value":-0.93,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":2.186385737439222},"gooey":{"value":true},"infiniteGooey":{"value":true},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.17,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":false},"onMouse":{"value":1},"noise_speed":{"value":0.2,"range":[0,10]},"metaball":{"value":0.2,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}}
+       , gooey:true 
+      });
+    
+      var elems=document.querySelectorAll(".elem");
+     elems.forEach(function(elem){
+        var h1s =elem.querySelectorAll("h1");
+        var index=0;
+        var animation=false;
+        document.querySelector("#main").addEventListener("click",function(){
+            if(!animation){
+                animation=true;
+           gsap.to(h1s[index],{
+              top:"-=100%",
+              ease:Expo.easeInout,
+              duration:0.7,
+              
+              onComplete:function(){
+                  gsap.set(this._targets[0],{top:"100%"})
+                  animation=false;
+              }
+           });
+      
+           index===h1s.length-1? index=0:index++;
+           gsap.to(h1s[index],{
+              top:"-=100%",
+              ease:Expo.easeInout,
+              duration:1
+           });
+        }
+        })
+     })
+     
+ </script>
+</body>
+</html>

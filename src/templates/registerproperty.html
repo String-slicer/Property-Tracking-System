@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Registration</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zMF9hbl9hYnN0cmFjdF92aXN1YWxpemF0aW9uX29mX2FfYmxvY2tjaGFpbl9uZV80ZWIwODVmNC0yODFlLTRkYTMtYjdlMS00MmY1ZTFkMDkyM2VfMS5qcGc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Transparent background for the form */
+        .form-container {
+            background-color: rgba(255, 252, 252, 0.404);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        /* Styling for nav bar */
+        .navbar {
+            /*background-color: rgba(0, 0, 0, 0.7);*/ 
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+        }
+
+        /* Styling for nav buttons */
+        .navbar a {
+            padding: 10px 20px;
+            background-color: #3490dc;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #2779bd;
+        }
+
+        /* Text shadow for improved readability */
+        label, input, a {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        input[type="submit"] {
+            background-color: #09e670;
+        }
+
+        /* Add padding to prevent content from being hidden behind the navbar */
+        .content {
+            padding-top: 100px; /* Enough space for the fixed navbar */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Home</a>
+        <a href="/getpropertydetailspage" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Details</a>
+        <a href="/transferownershippage" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Transfer</a>
+    </nav>
+
+        <!-- <h1 class="text-2xl font-bold text-center mb-8">Property Tracking System</h1>  -->
+    <!-- Page Content -->
+    <div class="content min-h-screen flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="form-container max-w-md w-full shadow-md rounded-lg p-8 space-y-6">
+            <h2 class="text-2xl font-bold text-center mb-8">Register Property</h2>
+            <form action="/registerpropertyform" method="post" class="space-y-4">
+                <div>
+                    <label for="id" class="block text-sm font-medium">Enter ID</label>
+                    <input type="number" name="id" id="id" class="mt-1 text-black block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                </div>
+
+                <div>
+                    <label for="location" class="block text-sm font-medium">Enter Location</label>
+                    <input type="text" name="location" id="location" class="mt-1  text-black block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                </div>
+
+                <div>
+                    <label for="size" class="block text-sm font-medium">Enter Size</label>
+                    <input type="number" name="size" id="size" class=" text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" required>
+                </div>
+
+                <div class="text-right">
+                    <input type="submit" value="Add Product" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
+                </div>
+            </form>
+
+            <div class="mt-4 text-center">
+                {{response}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

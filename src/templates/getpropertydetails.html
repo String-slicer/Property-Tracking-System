@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8zMF9hbl9hYnN0cmFjdF92aXN1YWxpemF0aW9uX29mX2FfYmxvY2tjaGFpbl9uZV80ZWIwODVmNC0yODFlLTRkYTMtYjdlMS00MmY1ZTFkMDkyM2VfMS5qcGc.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Transparent background for the form */
+        .form-container {
+            background-color: rgba(255, 252, 252, 0.404);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        /* Styling for nav bar */
+        .navbar {
+         /*   background-color: rgba(0, 0, 0, 0.7);*/
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+        }
+
+        /* Styling for nav buttons */
+        .navbar a {
+            padding: 10px 20px;
+            background-color: #3490dc;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #2779bd;
+        }
+
+        /* Text shadow for improved readability */
+        label, input, a {
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        input[type="submit"] {
+            background-color: #09e670;
+        }
+
+        /* Add padding to prevent content from being hidden behind the navbar */
+        .content {
+            padding-top: 100px; /* Enough space for the fixed navbar */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Home</a>
+        <a href="/getpropertydetailspage" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Details</a>
+        <a href="/transferownershippage" class="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">Transfer</a>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content min-h-screen flex flex-col items-center justify-center py-12">
+        <div class="form-container max-w-md w-full shadow-lg rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-center mb-8">Property Details</h2>
+
+            <form action="/getpropertydetailsform" method="post" class="space-y-6">
+                <div>
+                    <label for="id" class="block text-sm font-medium">Enter ID</label>
+                    <input type="number" name="id" id="id"
+                        class="text-black mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit"
+                        class="w-full bg-green-500 text-white py-2 px-4 rounded-md shadow hover:bg-green-600 focus:ring focus:ring-green-200">
+                </div>
+            </form>
+
+            <!-- Placeholder for response -->
+            <div class="mt-6 text-center text-gray-300">
+                {{response}}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
