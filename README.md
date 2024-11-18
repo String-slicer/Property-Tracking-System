@@ -81,12 +81,9 @@ Follow these steps to set up and run the project locally:
    cd backend
    ```
 
-2. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
-3. Start the Flask server:
+
+2. Start the Flask server:
    ```bash
    python app.py
    ```
